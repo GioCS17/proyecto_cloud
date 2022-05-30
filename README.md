@@ -3,10 +3,10 @@
 ## Arquitectura 
 
 ### Predicción de código C++
-[](arquitectura_predecir.png)
+![Arquitectura para Predecir](arquitectura_predecir.png)
 
 ### Historial de predicciones  
-[](arquitectura_historial.png)
+![Arquitectura para Historial](arquitectura_historial.png)
  
 ## Funcionalidad
 1. Entrada de código y ver vulnerabilidades a la derecha. 
