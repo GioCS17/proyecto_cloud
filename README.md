@@ -1,10 +1,12 @@
 # Aplicativo de detección de vulnerabilidades
 
-## Arquitectura (Giordano)
-1. Frontend: [Streamlit]([https://gradio.app/](https://streamlit.io/)
-2. Modelo Deep Learning: [Tensorflow](https://www.tensorflow.org/)
-3. Base datos en MongoDB.
-4. Kubernetes para despliegue del aplicativo
+## Arquitectura 
+
+### Predicción de código C++
+[](arquitectura_predecir.png)
+
+### Historial de predicciones  
+[](arquitectura_historial.png)
  
 ## Funcionalidad
 1. Entrada de código y ver vulnerabilidades a la derecha. 
