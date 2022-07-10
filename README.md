@@ -53,3 +53,60 @@ Entrar como localhost:8080
 
 
 Un aspecto interesante también a notar es el uso de [minio](https://min.io/) como almacén de archivos. Esto se puede visualizar tanto en los deployments y servicios generados.
+
+
+# Instalar OpenFaaS
+
+```bash
+curl -SLsf https://cli.openfaas.com | sudo sh
+kubectl rollout status -n openfaas deploy/gateway
+kubectl port-forward -n openfaas svc/gateway 8080:8080
+```
+Luego es solo loguearse. 
+
+Importante: Ejecutar la siguiente instrucción para obtener la contraseña. El usuario es admin.
+```bash
+PASSWORD=$(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
+echo $PASSWORD
+```
+![](images/openfaas-dashboard.png)
+
+
+# Confirmar inslatación
+Para confirmar con la instalación de OpenFaaS imprimos los namespaces creados.
+
+```bash
+kubectl get namespaces
+```
+![](images/namespace_openfaas.png)
+
+
+# Revisar funciones creadas
+```bash
+kubectl get pods -n openfaas-fn
+```
+![](images/functions-openfaas.png)
+
+
+# Construir imagen del modelo con OpenFaaS
+```bash
+faas-cli build
+```
+## Revisar imagenes creadas en docker
+```bash
+docker images
+```
+![](images/imagen-model.png)
+
+# Desplegar modelo con OpenFaaS
+```bash
+faas-cli up
+```
+
+## Revisar función creada
+```bash
+kubectl get pods -n openfaas-fn
+```
+![](images/imagen-model.png)
+
+
